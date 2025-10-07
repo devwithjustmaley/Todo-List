@@ -39,6 +39,7 @@
 
 .todos {
     display: flex;
+    visibility: hidden;
     flex-direction: column;
     margin-top: 30px;
 }

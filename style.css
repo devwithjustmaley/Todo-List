@@ -37,14 +37,14 @@
     cursor: pointer;
 }
 
-.todos {
+.todos , .dones{
     display: flex;
     visibility: hidden;
     flex-direction: column;
     margin-top: 30px;
 }
 
-.todo {
+.todo, .done {
     background: #433798;
     width: 90vw;
     padding: 20px;
@@ -54,16 +54,16 @@
     justify-content: space-between;
 }
 
-.todo svg {
+.todo svg, .done svg{
     cursor: pointer;
     fill: #c9c5ec;
 }
 
-.todo svg:hover {
+.todo svg:hover, .done svg:hover {
     fill: white;
 }
 
-.todo .checkbox {
+.todo .checkbox, .done .checkbox{
     accent-color: #ffffff;
     transform: scale(2);
     cursor: pointer;

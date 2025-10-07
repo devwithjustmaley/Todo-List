@@ -1,15 +1,17 @@
-const todoTask = [];
+const search = document.querySelector(".search");
+const submit = document.querySelector(".submit");
+const todos = document.querySelector(".todos");
+const form = document.querySelector(".form");
+const dones = document.querySelector(".dones");
+let todo = document.createElement("div");
 
-export function createTodo() {
-  const search = document.querySelector(".search");
-  const submit = document.querySelector(".submit");
-  const todos = document.querySelector(".todos");
-  const form = document.querySelector(".form");
+export async function createTodo() {
   submit.addEventListener("click", (e) => {
+    e.preventDefault();
     try {
       if (search.value.trim() !== "") {
         todos.style.visibility = "visible";
-        const todo = document.createElement("div");
+        todo = document.createElement("div");
         todo.className = "todo";
         todo.innerHTML = `
                 <form>
@@ -22,6 +24,8 @@ export function createTodo() {
 
         todos.append(todo);
         form.reset();
+        const todoCheckbox = todo.querySelector(".checkbox");
+        todoCheckbox.addEventListener("change", completeTask);
         return;
       }
       throw new Error("Veuillez svp mettre le nom de la tâche");
@@ -44,4 +48,17 @@ function createError(e) {
   setTimeout(() => {
     removeError(p);
   }, 3000);
+}
+
+function completeTask(e) {
+  const currentTask = e.target.closest(".todo");
+  if (e.target.checked) {
+    currentTask.className = "done";
+    dones.style.visibility = "visible";
+    dones.append(currentTask);
+    return;
+  }
+  dones.style.visibility = "hidden";
+  todos.append(currentTask);
+  currentTask.className = "todo";
 }

@@ -2,16 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
 }
 
 .form {
     display: flex;
     background: #1e1945;
     padding: 20px;
-    height: 15vh;
+    height: 10vh;
     align-content: center;
     align-items: center;
     justify-content: center;
+    width: 100vw;
 }
 
 .form .search {
@@ -25,4 +35,37 @@
 
 .form .submit {
     cursor: pointer;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.todo {
+    background: #433798;
+    width: 90vw;
+    padding: 20px;
+    color: white;
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.todo svg {
+    cursor: pointer;
+    fill: #c9c5ec;
+}
+
+.todo svg:hover {
+    fill: white;
+}
+
+.todo .checkbox {
+    accent-color: #ffffff;
+    transform: scale(2);
+    cursor: pointer;
+    border-radius: 50px;
+    margin-right: 10px;
 }

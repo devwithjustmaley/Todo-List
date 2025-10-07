@@ -3,3 +3,26 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.form {
+    display: flex;
+    background: #1e1945;
+    padding: 20px;
+    height: 15vh;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.form .search {
+    border: none;
+    height: 50px;
+    width: 60vw;
+    padding-left: 20px;
+    border-radius: 30px;
+    outline: none;
+}
+
+.form .submit {
+    cursor: pointer;
+}
